@@ -1,0 +1,11 @@
+# Robots.txt for URL Parameter Manager
+# https://url-params.jannafta.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://url-params.jannafta.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

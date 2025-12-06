@@ -36,7 +36,7 @@ export function Footer() {
                 Email Me
               </a>
               <a
-                href="https://calendly.com/jannafta"
+                href="https://calendly.com/jannafta/1-1-kickoff-call"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-5 py-2.5 bg-green-500 text-white rounded-lg

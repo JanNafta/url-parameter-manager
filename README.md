@@ -1,176 +1,251 @@
-# URL Parameter Manager - UTM Builder & Tracking URL Generator
+<div align="center">
 
-> **Free professional tool for programmatic advertising, performance marketing, and mobile attribution tracking.**
+# :link: URL Parameter Manager
 
-[![Deploy](https://github.com/JanNafta/url-parameter-manager/actions/workflows/deploy.yml/badge.svg)](https://github.com/JanNafta/url-parameter-manager/actions/workflows/deploy.yml)
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://digitalnafta.com/url-builder/)
+**The free, open-source URL builder for marketers who work with tracking links every day.**
 
-## Overview
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen?style=for-the-badge&logo=google-chrome&logoColor=white)](https://digitalnafta.com/url-builder/)
+[![Deploy](https://img.shields.io/github/actions/workflow/status/JanNafta/url-parameter-manager/deploy.yml?style=for-the-badge&label=deploy&logo=github)](https://github.com/JanNafta/url-parameter-manager/actions/workflows/deploy.yml)
+[![JavaScript](https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://github.com/JanNafta/url-parameter-manager)
+[![Stars](https://img.shields.io/github/stars/JanNafta/url-parameter-manager?style=for-the-badge&logo=github&color=yellow)](https://github.com/JanNafta/url-parameter-manager/stargazers)
+[![Forks](https://img.shields.io/github/forks/JanNafta/url-parameter-manager?style=for-the-badge&logo=github&color=blue)](https://github.com/JanNafta/url-parameter-manager/network/members)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
 
-A powerful, free URL parameter management tool designed specifically for **AdTech**, **AdOps**, and **Performance Marketing** professionals. Built by [JanNafta](https://www.linkedin.com/in/jannafta-programmatic-performance-dsp-ssp-rtb), a programmatic advertising expert specializing in DSP/SSP optimization and mobile user acquisition.
+<br/>
 
-**Live Demo:** [https://digitalnafta.com/url-builder/](https://digitalnafta.com/url-builder/)
+:point_right: **[Try it now — no login required](https://digitalnafta.com/url-builder/)** :point_left:
+
+</div>
 
 ---
 
-## Features
+## :thinking: What is this?
 
-### Core Functionality
-- **UTM Parameter Builder** - Create Google Analytics compatible tracking URLs
-- **MMP Attribution Links** - Generate tracking URLs for AppsFlyer, Adjust, Branch, Singular, Kochava
-- **Macro Preservation** - Keeps DSP macros intact (`{campaign_id}`, `{creative_id}`, `{publisher_id}`, etc.)
-- **QR Code Generation** - Instant QR codes for any URL
-- **Bulk URL Processing** - Process multiple URLs simultaneously
-- **URL History** - Track and reuse previously created URLs
+Imagine you run ads on Google, Facebook, TikTok, or mobile ad networks. Every time you launch a campaign, you need to add special tags (called **parameters**) to your URLs so you can track where your traffic is coming from. Doing this by hand is slow and error-prone.
 
-### DSP/SSP Integration
-Optimized for all major programmatic platforms:
+**URL Parameter Manager** is a web app that lets you paste any URL, visually add or edit those tracking tags, pick from ready-made templates for popular platforms, generate a QR code, and copy the final link — all in seconds. Think of it as a Swiss Army knife for anyone who builds marketing links.
 
-| DSP/Ad Networks | MMPs/Attribution | Exchanges |
-|-----------------|------------------|-----------|
-| Moloco | AppsFlyer | Google AdX |
-| Kayzen | Adjust | AppLovin MAX |
-| Smadex | Branch | ironSource |
-| AppLovin | Singular | Unity Ads |
-| Liftoff | Kochava | Vungle |
-| Unity Ads | Tenjin | Digital Turbine |
-| Digital Turbine | | InMobi |
-| Mintegral | | Mintegral |
+---
 
-### Macro Support
-Preserves tracking macros from all major DSPs:
+## :sparkles: Features
+
+| Feature | Description |
+|---------|-------------|
+| :dart: **UTM Builder** | Add `utm_source`, `utm_medium`, `utm_campaign` and more with one click |
+| :iphone: **MMP Templates** | Pre-built templates for AppsFlyer, Adjust, Branch, and Singular |
+| :robot: **DSP Templates** | Ready-to-use macros for Moloco, Kayzen, Smadex, AppLovin, and Appnext |
+| :wrench: **Macro Preservation** | Keeps `{campaign_id}`, `${CLICK_ID}`, `xapnt1x` and other tracking macros intact — never URL-encodes them |
+| :chart_with_upwards_trend: **QR Code Generator** | Instant, customizable QR codes (7 color themes, 3 sizes) with PNG download |
+| :globe_with_meridians: **URL Metadata Preview** | Automatically fetches page title, description, and Open Graph image for any URL |
+| :floppy_disk: **URL History** | Your last 20 URLs are saved locally in your browser — no account needed |
+| :art: **Syntax Highlighting** | The generated URL is color-coded so you can spot base path vs. query parameters at a glance |
+| :lock: **100% Private** | Everything runs in your browser. No data is sent to any server (except the metadata preview, which calls the public Microlink API) |
+
+---
+
+## :movie_camera: How It Works
 
 ```
-{campaign_id}     {creative_id}      {publisher_id}
-{site_id}         {placement_id}     {click_id}
-{device_id}       {idfa}             {gaid}
-{country}         {city}             {carrier}
-${AUCTION_ID}     ${CREATIVE_ID}     ${PUBLISHER_ID}
-[timestamp]       [random]           [device_ip]
+1. Paste a URL          -->  Parameters are auto-detected and shown in an editable table
+2. Pick a template      -->  One-click presets for Google, Meta, TikTok, AppsFlyer, Moloco...
+3. Edit values           -->  Change any parameter name or value — macros stay safe
+4. Copy or scan          -->  Copy the final URL to clipboard, or download a QR code
 ```
 
 ---
 
-## Use Cases
+## :jigsaw: Supported Platforms
 
-### Programmatic Advertising
-- **DSP Campaign Tracking** - Track performance across Moloco, Kayzen, Smadex, AppLovin
-- **RTB Attribution** - Real-time bidding campaign measurement
-- **Retargeting URLs** - Create properly attributed retargeting links
+<details>
+<summary><strong>Analytics & Ad Platforms</strong></summary>
 
-### Mobile User Acquisition (UA)
-- **App Install Campaigns** - CPI, CPA, ROAS tracking
-- **Deep Linking** - Deferred deep links with attribution
-- **SKAdNetwork** - iOS 14+ privacy-compliant tracking
+| Platform | Template included? | Macro format |
+|----------|--------------------|-------------|
+| Google Ads | :white_check_mark: | `{campaignid}`, `{keyword}`, `{gclid}` |
+| Meta (Facebook) Ads | :white_check_mark: | `{{campaign.name}}`, `{{ad.name}}` |
+| TikTok Ads | :white_check_mark: | `__CAMPAIGN_NAME__`, `__CLICKID__` |
 
-### iGaming & Fintech
-- **Affiliate Tracking** - Sub-ID and click tracking for affiliates
-- **CPA Networks** - Conversion tracking with postbacks
-- **Geo-Targeting** - Country and region-specific parameters
+</details>
 
-### Performance Marketing
-- **Google Ads / Meta Ads** - UTM parameters for paid campaigns
-- **Influencer Marketing** - Unique tracking per influencer
-- **Email Campaigns** - Newsletter click attribution
+<details>
+<summary><strong>Mobile Measurement Partners (MMPs)</strong></summary>
+
+| MMP | Template included? | Key parameters |
+|-----|-------------------|----------------|
+| AppsFlyer | :white_check_mark: | `pid`, `c`, `af_siteid`, `af_c_id`, `clickid` |
+| Adjust | :white_check_mark: | `tracker`, `campaign`, `adgroup`, `creative` |
+| Branch | Param-ready | Custom deep link params |
+| Singular | Param-ready | Custom attribution params |
+| Kochava | Param-ready | Custom attribution params |
+
+</details>
+
+<details>
+<summary><strong>Demand-Side Platforms (DSPs)</strong></summary>
+
+| DSP | Template included? | Macro format |
+|-----|-------------------|-------------|
+| Moloco | :white_check_mark: | `${CAMPAIGN_NAME}`, `${CLICK_ID}` |
+| Kayzen | :white_check_mark: | `{campaign_name}`, `{CONVERSION_ID}` |
+| Smadex | :white_check_mark: | `{CAMPAIGN_NAME}`, `{CLICK_ID}` |
+| Appnext | :white_check_mark: | `xapnt1x`, `{apnt_campid}` |
+| AppLovin | Param-ready | Custom macros |
+| Liftoff | Param-ready | Custom macros |
+| Unity Ads | Param-ready | Custom macros |
+| Digital Turbine | Param-ready | Custom macros |
+| Mintegral | Param-ready | Custom macros |
+
+</details>
 
 ---
 
-## Tech Stack
+## :building_construction: Tech Stack
 
-- **Frontend:** React 18 + Vite
-- **Styling:** Tailwind CSS
-- **Icons:** Lucide React
-- **QR Generation:** qrcode.react
-- **Deployment:** GitHub Actions + FTP
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| **UI Framework** | React 18 | Component-based interface |
+| **Build Tool** | Vite 5 | Fast dev server & optimized production builds |
+| **Styling** | Tailwind CSS 3 | Utility-first responsive design |
+| **Icons** | Lucide React | Clean, consistent SVG icons |
+| **QR Codes** | qrcode.react | Client-side QR code generation |
+| **Metadata** | Microlink API | Fetches Open Graph data for URL previews |
+| **Deployment** | GitHub Actions + FTP | Auto-deploy on every push to `main` |
 
 ---
 
-## Local Development
+## :rocket: Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) 18 or higher
+- npm (comes with Node.js)
+
+### Installation
 
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/JanNafta/url-parameter-manager.git
 cd url-parameter-manager
 
-# Install dependencies
+# 2. Install dependencies
 npm install
 
-# Start development server
+# 3. Start the development server
 npm run dev
+```
 
-# Build for production
+The app will open at `http://localhost:5173`.
+
+### Build for Production
+
+```bash
 npm run build
 ```
 
+The optimized output goes to the `dist/` folder, ready to deploy anywhere (static hosting, CDN, FTP, etc.).
+
 ---
 
-## Deployment
+## :open_file_folder: Project Structure
 
-This project uses **GitHub Actions** for automated deployment. Every push to `main` triggers:
-
-1. Build the React app (`npm run build`)
-2. Deploy to production via FTP
-
-### Manual Deployment
-
-```bash
-./deploy.sh
+```
+url-parameter-manager/
+├── public/                  # Static assets (favicons, robots.txt, sitemap)
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx       # Top navigation bar with feature badges
+│   │   ├── Footer.jsx       # CTA section + services grid
+│   │   ├── UrlInput.jsx     # URL input field with validation & examples
+│   │   ├── ParameterTable.jsx   # Editable table of URL parameters
+│   │   ├── UTMTemplates.jsx     # One-click template presets (9 platforms)
+│   │   ├── UpdatedUrl.jsx       # Generated URL display with copy button
+│   │   ├── MetadataPreview.jsx  # OG metadata + favicon preview
+│   │   ├── QRCodeGenerator.jsx  # QR code with color/size options
+│   │   ├── URLHistory.jsx       # LocalStorage-based URL history
+│   │   └── index.js             # Barrel exports
+│   ├── hooks/
+│   │   └── useDebounce.js   # Debounce hook (avoids API spam)
+│   ├── utils/
+│   │   └── urlUtils.js      # URL parsing, macro preservation, encoding
+│   ├── App.jsx              # Main application component
+│   ├── main.jsx             # React entry point
+│   └── index.css            # Global styles + animations
+├── index.html               # HTML entry point with SEO meta tags & schemas
+├── vite.config.js           # Vite configuration
+├── tailwind.config.js       # Tailwind CSS configuration
+├── package.json             # Dependencies and scripts
+└── deploy.sh                # Manual deployment script
 ```
 
-### GitHub Secrets Required
+---
 
-| Secret | Description |
-|--------|-------------|
-| `FTP_USERNAME` | FTP account username |
-| `FTP_PASSWORD` | FTP account password |
+## :brain: How Macro Preservation Works
+
+Most URL builders break tracking macros like `{campaign_id}` by URL-encoding the curly braces into `%7Bcampaign_id%7D`. Ad networks then cannot read them.
+
+This tool **detects and preserves** six macro formats automatically:
+
+| Format | Example | Used by |
+|--------|---------|---------|
+| `{macro}` | `{campaign_id}` | AppsFlyer, Kayzen, Smadex |
+| `${macro}` | `${CLICK_ID}` | Moloco |
+| `[macro]` | `[timestamp]` | Various |
+| `%%macro%%` | `%%CLICK_ID%%` | Legacy networks |
+| `@[macro]` | `@[CLICK_ID]` | Custom integrations |
+| `xapntNx` | `xapnt1x` | Appnext |
+
+Everything else gets properly URL-encoded. The logic lives in `src/utils/urlUtils.js`.
 
 ---
 
-## Keywords & Topics
+## :globe_with_meridians: SEO & Metadata
 
-This tool is relevant for professionals working in:
+The app includes production-grade SEO out of the box:
 
-**Programmatic Advertising:** DSP, SSP, RTB, programmatic buying, real-time bidding, ad exchanges, header bidding, private marketplace (PMP), programmatic direct
-
-**Mobile Attribution:** MMP, AppsFlyer, Adjust, Branch, Singular, Kochava, Tenjin, SKAN, SKAdNetwork, ATT, IDFA, GAID, device fingerprinting
-
-**Performance Marketing:** CPI, CPA, CPM, CPC, ROAS, LTV, eCPM, fill rate, win rate, bid optimization, audience targeting
-
-**Ad Tech Platforms:** Moloco, Kayzen, Smadex, AppLovin, Liftoff, Unity Ads, ironSource, Digital Turbine, Mintegral, InMobi, Vungle, AdColony
-
-**Verticals:** iGaming, casino, sports betting, fintech, e-commerce, subscription apps, gaming, social casino, real-money gaming (RMG)
-
-**AdOps:** Campaign management, trafficking, creative optimization, A/B testing, frequency capping, brand safety, viewability, fraud prevention
+- **Open Graph & Twitter Card** meta tags for rich link previews
+- **JSON-LD structured data** — WebApplication, Person, and FAQ schemas
+- **Canonical URL**, sitemap, and robots.txt
+- **Accessibility**: ARIA labels, focus rings, reduced-motion support, keyboard navigation
 
 ---
 
-## Author
+## :handshake: Contributing
 
-**JanNafta** - Programmatic Advertising Expert
+Contributions are welcome! Feel free to open an issue or submit a pull request.
 
-- LinkedIn: [jannafta-programmatic-performance-dsp-ssp-rtb](https://www.linkedin.com/in/jannafta-programmatic-performance-dsp-ssp-rtb)
-- Email: jannafta@gmail.com
-- Calendly: [Book a Call](https://calendly.com/jannafta/1-1-kickoff-call)
-
-### Services
-- DSP Campaign Optimization (Moloco, Kayzen, Smadex, AppLovin)
-- MMP/Attribution Setup (AppsFlyer, Adjust, Branch, Singular)
-- User Acquisition Strategy
-- Performance Marketing Audits
-- iGaming & Fintech UA Expertise
+```bash
+# Fork the repo, then:
+git checkout -b feature/my-new-feature
+# Make your changes...
+git commit -m "feat: add my new feature"
+git push origin feature/my-new-feature
+# Open a Pull Request on GitHub
+```
 
 ---
 
-## License
+## :bust_in_silhouette: Author
 
-MIT License - Feel free to use this tool for your campaigns!
+**Jan Naftanaila** — Media Buyer & AI Automation Specialist
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/jannafta-programmatic-performance-dsp-ssp-rtb)
+[![Email](https://img.shields.io/badge/Email-jannafta@gmail.com-red?style=flat-square&logo=gmail)](mailto:jannafta@gmail.com)
+[![Calendly](https://img.shields.io/badge/Calendly-Book_a_Call-green?style=flat-square&logo=calendly)](https://calendly.com/jannafta/1-1-kickoff-call)
+
+Specializing in programmatic advertising (DSP/SSP), mobile attribution (AppsFlyer, Adjust, Branch), and user acquisition strategy for mobile apps.
 
 ---
 
-## Contributing
+## :page_facing_up: License
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+MIT License — free to use, modify, and distribute. See [LICENSE](LICENSE) for details.
 
 ---
 
-*Built with React + Vite | Deployed with GitHub Actions*
+<div align="center">
+
+**If this tool saved you time, consider giving it a :star: on GitHub!**
+
+Made with :heart: by [JanNafta](https://www.linkedin.com/in/jannafta-programmatic-performance-dsp-ssp-rtb)
+
+</div>

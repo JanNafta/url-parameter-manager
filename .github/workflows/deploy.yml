@@ -36,5 +36,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /
+          server-dir: digitalnafta.com/url-builder/
           dangerous-clean-slate: false
